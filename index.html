@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Profile - [Your Name]</title>
+    <title>Interactive Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Chosen Palette: Dark Light Contrast -->
     <!-- Application Structure Plan: The application is structured into thematic sections for intuitive navigation: a hero section for immediate impact, an interactive timeline for career progression, a skills showcase with a visual chart for quick assessment, and a contact section. This design prioritizes user engagement and allows recruiters to quickly access the most relevant information, rather than a simple chronological list. -->
     <!-- Visualization & Content Choices: 
         - Career Experience: An interactive vertical timeline built with HTML/CSS/Tailwind and JS. Goal: Show career progression. Interaction: Clicking on a job title reveals the detailed description. Justification: More engaging and less overwhelming than a long text block.
@@ -16,76 +16,59 @@
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
-            background-color: #FDFBF7;
-            color: #3D3D3D;
+            background-color: #F8F9FA;
+            color: #1A202C;
             font-family: 'Inter', sans-serif;
         }
         .timeline-item-content {
             display: none;
         }
-        .timeline-item-header svg {
-            transition: transform 0.3s ease;
-        }
     </style>
 </head>
 <body class="antialiased">
     <div class="container mx-auto p-4 sm:p-8">
-        <!-- Hero Section -->
-        <header class="mb-16">
-            <div class="flex flex-col md:flex-row items-center gap-8 bg-white p-8 rounded-lg shadow-sm">
-                <!-- Profile Picture Placeholder -->
-                <div class="w-40 h-40 bg-gray-300 rounded-full flex-shrink-0 flex items-center justify-center">
-                    <!-- You can replace this div with an <img src="your-photo.jpg"> tag -->
-                    <span class="text-gray-500">Photo</span>
-                </div>
-                <div class="flex-grow text-center md:text-left">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800">[Your Name]</h1>
-                    <p class="text-xl text-gray-700 mt-2 font-semibold">IT Leader | Service & Asset Management Specialist</p>
-                    <p class="text-md text-gray-600 mt-4">[Your Phone] | [Your Email] | [Your LinkedIn/Portfolio URL]</p>
-                    <p class="mt-6 text-gray-700 leading-relaxed">
-                        Accomplished and results-oriented IT leader with extensive experience in leading service delivery and asset management operations. Proven ability to oversee end-to-end IT Service Management (ITSM) and manage the full lifecycle of physical and digital assets. Skilled in optimizing IT processes, ensuring SLA and KPI compliance, and delivering exceptional support services. Adept at driving process improvement, managing cross-functional teams, and maintaining accurate asset inventories to enhance organizational efficiency and compliance.
-                    </p>
-                </div>
-            </div>
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">[Your Name]</h1>
+            <p class="text-lg text-gray-600 mt-2">[Your Phone] | [Your Email] | [Your LinkedIn/Portfolio URL (Optional)]</p>
         </header>
 
         <main>
+            <section id="summary" class="mb-12 bg-[#2D3748] p-6 rounded-lg shadow-xl">
+                <h2 class="text-2xl font-bold text-white mb-4">Summary</h2>
+                <p class="text-gray-300 leading-relaxed">Accomplished and results-oriented IT leader with extensive experience in leading service delivery and asset management operations. Proven ability to oversee end-to-end IT Service Management (ITSM) and manage the full lifecycle of physical and digital assets. Skilled in optimizing IT processes, ensuring SLA and KPI compliance, and delivering exceptional support services. Adept at driving process improvement, managing cross-functional teams, and maintaining accurate asset inventories to enhance organizational efficiency and compliance.</p>
+            </section>
+
             <section id="core-competencies" class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Core Competencies</h2>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center">Core Competencies</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-                        <h3 class="font-semibold text-gray-800">Service Management</h3>
-                        <p class="text-sm text-gray-600">ITSM, ITIL, Service Desk Operations, SLA/KPI Management, Incident/Problem/Change/Request Management</p>
+                    <div class="bg-[#2D3748] p-4 rounded-lg shadow-xl text-center">
+                        <h3 class="font-semibold text-white">Service Management</h3>
+                        <p class="text-sm text-gray-400">ITSM, ITIL, Service Desk Operations, SLA/KPI Management, Incident/Problem/Change/Request Management</p>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-                        <h3 class="font-semibold text-gray-800">Asset Management</h3>
-                        <p class="text-sm text-gray-600">IT Asset Lifecycle, Inventory Management, CMDB, Software Licensing, IT Hardware, Vendor Management</p>
+                    <div class="bg-[#2D3748] p-4 rounded-lg shadow-xl text-center">
+                        <h3 class="font-semibold text-white">Asset Management</h3>
+                        <p class="text-sm text-gray-400">IT Asset Lifecycle, Inventory Management, CMDB, Software Licensing, IT Hardware, Vendor Management</p>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-                        <h3 class="font-semibold text-gray-800">Team Leadership</h3>
-                        <p class="text-sm text-gray-600">Team Building, Mentorship, Performance Management, Cross-functional Collaboration</p>
+                    <div class="bg-[#2D3748] p-4 rounded-lg shadow-xl text-center">
+                        <h3 class="font-semibold text-white">Team Leadership</h3>
+                        <p class="text-sm text-gray-400">Team Building, Mentorship, Performance Management, Cross-functional Collaboration</p>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-                        <h3 class="font-semibold text-gray-800">Technical</h3>
-                        <p class="text-sm text-gray-600">Network Infrastructure Design, Cloud Platforms (AWS, Digital Ocean), Virtualization (VMware, Hyper-V), Firewall/Switch Configuration</p>
+                    <div class="bg-[#2D3748] p-4 rounded-lg shadow-xl text-center">
+                        <h3 class="font-semibold text-white">Technical</h3>
+                        <p class="text-sm text-gray-400">Network Infrastructure Design, Cloud Platforms (AWS, Digital Ocean), Virtualization (VMware, Hyper-V), Firewall/Switch Configuration</p>
                     </div>
                 </div>
             </section>
             
             <section id="experience" class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Experience</h2>
-                <div class="relative border-l-2 border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Experience</h2>
+                <div class="relative border-l-2 border-[#D1D5DB]">
                     <div class="timeline-item mb-8 ml-4">
-                        <div class="absolute w-3 h-3 bg-gray-300 rounded-full -left-1.5 mt-1.5"></div>
-                        <div class="p-4 bg-white rounded-lg shadow-sm cursor-pointer timeline-item-header" onclick="toggleDetails('exp1')">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-800">IT Manager</h3>
-                                    <p class="text-sm text-gray-500">Mineski Global | Jan 2021 – Present</p>
-                                </div>
-                                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                            <div id="exp1" class="timeline-item-content mt-2 text-gray-700">
+                        <div class="absolute w-3 h-3 bg-gray-400 rounded-full -left-1.5 mt-1.5"></div>
+                        <div class="p-4 bg-[#2D3748] rounded-lg shadow-xl cursor-pointer hover:bg-[#3B4557] transition-colors" onclick="toggleDetails('exp1')">
+                            <h3 class="text-lg font-semibold text-white">IT Manager</h3>
+                            <p class="text-sm text-gray-400">Mineski Global | Jan 2021 – Present</p>
+                            <div id="exp1" class="timeline-item-content mt-2 text-gray-300">
                                 <ul class="list-disc list-inside">
                                     <li>Led IT service management (ITSM) operations, managing a team of 6 professionals responsible for IT infrastructure, network, and support functions.</li>
                                     <li>Oversaw and managed IT asset tracking, planning, and inventory for all hardware and systems, ensuring optimal utilization and lifecycle management.</li>
@@ -97,16 +80,11 @@
                         </div>
                     </div>
                     <div class="timeline-item mb-8 ml-4">
-                        <div class="absolute w-3 h-3 bg-gray-300 rounded-full -left-1.5 mt-1.5"></div>
-                        <div class="p-4 bg-white rounded-lg shadow-sm cursor-pointer timeline-item-header" onclick="toggleDetails('exp2')">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-800">IT Service Delivery Manager</h3>
-                                    <p class="text-sm text-gray-500">Mineski Franchise Corp. | Jan 2017 – Oct 2021</p>
-                                </div>
-                                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                            <div id="exp2" class="timeline-item-content mt-2 text-gray-700">
+                        <div class="absolute w-3 h-3 bg-gray-400 rounded-full -left-1.5 mt-1.5"></div>
+                        <div class="p-4 bg-[#2D3748] rounded-lg shadow-xl cursor-pointer hover:bg-[#3B4557] transition-colors" onclick="toggleDetails('exp2')">
+                            <h3 class="text-lg font-semibold text-white">IT Service Delivery Manager</h3>
+                            <p class="text-sm text-gray-400">Mineski Franchise Corp. | Jan 2017 – Oct 2021</p>
+                            <div id="exp2" class="timeline-item-content mt-2 text-gray-300">
                                 <ul class="list-disc list-inside">
                                     <li>Directed end-to-end service delivery operations, overseeing the Corporate IT, Maintenance, Help Desk, and Deployment teams.</li>
                                     <li>Authored and implemented IT policies, procedures, and manuals to standardize service delivery and asset usage.</li>
@@ -119,16 +97,11 @@
                         </div>
                     </div>
                     <div class="timeline-item mb-8 ml-4">
-                        <div class="absolute w-3 h-3 bg-gray-300 rounded-full -left-1.5 mt-1.5"></div>
-                        <div class="p-4 bg-white rounded-lg shadow-sm cursor-pointer timeline-item-header" onclick="toggleDetails('exp3')">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-800">IT Supervisor</h3>
-                                    <p class="text-sm text-gray-500">Mineski Franchise Corp. | Sep 2015 – Dec 2016</p>
-                                </div>
-                                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                            <div id="exp3" class="timeline-item-content mt-2 text-gray-700">
+                        <div class="absolute w-3 h-3 bg-gray-400 rounded-full -left-1.5 mt-1.5"></div>
+                        <div class="p-4 bg-[#2D3748] rounded-lg shadow-xl cursor-pointer hover:bg-[#3B4557] transition-colors" onclick="toggleDetails('exp3')">
+                            <h3 class="text-lg font-semibold text-white">IT Supervisor</h3>
+                            <p class="text-sm text-gray-400">Mineski Franchise Corp. | Sep 2015 – Dec 2016</p>
+                            <div id="exp3" class="timeline-item-content mt-2 text-gray-300">
                                 <ul class="list-disc list-inside">
                                     <li>Coordinated team members to ensure all assigned tickets were handled and resolved efficiently.</li>
                                     <li>Managed all on-site installation, repair, maintenance, and testing, serving as the front-line for technical support.</li>
@@ -140,16 +113,11 @@
                         </div>
                     </div>
                     <div class="timeline-item mb-8 ml-4">
-                        <div class="absolute w-3 h-3 bg-gray-300 rounded-full -left-1.5 mt-1.5"></div>
-                        <div class="p-4 bg-white rounded-lg shadow-sm cursor-pointer timeline-item-header" onclick="toggleDetails('exp4')">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-800">IT Staff</h3>
-                                    <p class="text-sm text-gray-500">Mineski Franchise Corp. | Jan 2015 – Aug 2015</p>
-                                </div>
-                                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                            <div id="exp4" class="timeline-item-content mt-2 text-gray-700">
+                        <div class="absolute w-3 h-3 bg-gray-400 rounded-full -left-1.5 mt-1.5"></div>
+                        <div class="p-4 bg-[#2D3748] rounded-lg shadow-xl cursor-pointer hover:bg-[#3B4557] transition-colors" onclick="toggleDetails('exp4')">
+                            <h3 class="text-lg font-semibold text-white">IT Staff</h3>
+                            <p class="text-sm text-gray-400">Mineski Franchise Corp. | Jan 2015 – Aug 2015</p>
+                            <div id="exp4" class="timeline-item-content mt-2 text-gray-300">
                                 <ul class="list-disc list-inside">
                                     <li>Performed PC desktop and network maintenance, providing hands-on service and support during field visits.</li>
                                     <li>Produced timely and detailed service reports.</li>
@@ -159,16 +127,11 @@
                         </div>
                     </div>
                     <div class="timeline-item ml-4">
-                        <div class="absolute w-3 h-3 bg-gray-300 rounded-full -left-1.5 mt-1.5"></div>
-                        <div class="p-4 bg-white rounded-lg shadow-sm cursor-pointer timeline-item-header" onclick="toggleDetails('exp5')">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-800">IT Field Engineer</h3>
-                                    <p class="text-sm text-gray-500">Ephesians67 | Aug 2012 – Aug 2014</p>
-                                </div>
-                                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </div>
-                            <div id="exp5" class="timeline-item-content mt-2 text-gray-700">
+                        <div class="absolute w-3 h-3 bg-gray-400 rounded-full -left-1.5 mt-1.5"></div>
+                        <div class="p-4 bg-[#2D3748] rounded-lg shadow-xl cursor-pointer hover:bg-[#3B4557] transition-colors" onclick="toggleDetails('exp5')">
+                            <h3 class="text-lg font-semibold text-white">IT Field Engineer</h3>
+                            <p class="text-sm text-gray-400">Ephesians67 | Aug 2012 – Aug 2014</p>
+                            <div id="exp5" class="timeline-item-content mt-2 text-gray-300">
                                 <ul class="list-disc list-inside">
                                     <li>Provided second-level troubleshooting for ATM machines, handling system reconfiguration and restoration.</li>
                                     <li>Assisted with ATM bank system migrations and network troubleshooting.</li>
@@ -181,8 +144,8 @@
             </section>
 
             <section id="technical-skills" class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Technical Skills</h2>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center">Technical Skills</h2>
+                <div class="bg-[#2D3748] p-6 rounded-lg shadow-xl">
                     <div class="chart-container" style="position: relative; height:40vh; width:80vw; max-width: 500px; margin: auto;">
                         <canvas id="skillsChart"></canvas>
                     </div>
@@ -190,7 +153,7 @@
             </section>
             
             <section id="education" class="text-center">
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">Education</h2>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Education</h2>
                 <p class="text-gray-700"><strong>Central Colleges of the Philippines</strong></p>
                 <p class="text-gray-600">Computer Engineering | 2006 – 2008</p>
             </section>
@@ -200,15 +163,10 @@
     <script>
         function toggleDetails(id) {
             const element = document.getElementById(id);
-            const header = element.closest('.timeline-item-header');
-            const icon = header.querySelector('svg');
-
             if (element.style.display === 'block') {
                 element.style.display = 'none';
-                icon.style.transform = 'rotate(0deg)';
             } else {
                 element.style.display = 'block';
-                icon.style.transform = 'rotate(180deg)';
             }
         }
 
@@ -221,14 +179,14 @@
                     label: 'Technical Skills',
                     data: [15, 15, 15, 15, 20, 20],
                     backgroundColor: [
-                        '#FFC107',
-                        '#FF5722',
-                        '#4CAF50',
-                        '#2196F3',
-                        '#9C27B0',
-                        '#E91E63'
+                        '#81E6D9',
+                        '#63B3ED',
+                        '#A5E3AC',
+                        '#E3B7A0',
+                        '#B19CD9',
+                        '#ED8936'
                     ],
-                    borderColor: '#FDFBF7',
+                    borderColor: '#F8F9FA',
                     borderWidth: 4
                 }]
             },
@@ -238,6 +196,9 @@
                 plugins: {
                     legend: {
                         position: 'bottom',
+                        labels: {
+                            color: '#FFFFFF'
+                        }
                     },
                     tooltip: {
                         callbacks: {
